@@ -20,6 +20,7 @@ namespace OpenNFS {
         if (!Config::get().vulkanRender) {
             this->_LoadTextures();
         }
+        m_thermoEngine.Init(assetData.id);
 
         // Configure performance data
         this->_SetVehicleState();
