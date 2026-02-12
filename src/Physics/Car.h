@@ -13,6 +13,8 @@
 #include "../Scene/Spotlight.h"
 #include "../Util/ImageLoader.h"
 #include "../Util/Utils.h"
+#include "ThermoEngine.h"
+#include "PacejkaTire.h"
 
 namespace OpenNFS {
     // Raycasting Data
@@ -75,6 +77,8 @@ namespace OpenNFS {
         explicit Car(LibOpenNFS::Car car);
         Car(LibOpenNFS::Car const &car, GLuint textureArrayID); // Multitextured car
         ~Car();
+        ThermoEngine m_thermoEngine;
+        PacejkaTire m_tires;
         void Update(btDynamicsWorld const *dynamicsWorld);
         void UpdateMeshesToTransform(btTransform const &trans, bool avoidPhysics = false);
         void SetPosition(glm::vec3 position, glm::quat orientation);
